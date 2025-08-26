@@ -65,7 +65,7 @@
                     <p class="page-description">Digite a nova senha e confime</p>
 
                     <form action="<?= $BASE_URL?>user_process.php" method="POST">
-                        <input type="hidden" name="type" value="changepassaword">
+                        <input type="hidden" name="type" value="changepassword">
                         <div class="form-group">
                             <label for="password">Nova senha:</label>
                             <input type="password" class="form-control" id="password" name="password"  placeholder="Digite seu nova senha" value="<?= $userData->lastname?>">
