@@ -39,7 +39,7 @@
             
             $image = $_FILES["image"];
             $imageType = ["image/jpeg", "image/jpg", "image/png"];
-            $jpgArray = ["image/jpg", "image/jpg"];
+            $jpgArray = ["image/jpeg", "image/jpg"];
 
             if(in_array($image["type"], $imageType)){
                 //checar se jpg

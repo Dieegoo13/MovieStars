@@ -94,6 +94,81 @@
     padding: 40px;
 }
 
+.section-description{
+    color: #ccc;
+    font-size: 18px;
+}
+
+.section-title{
+    font-size: 24px;
+    border-left: 4px solid #f5c518;
+    padding-left: 12px;
+    margin-top: 20px;
+}
+
+.movies-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.movie-card{
+    background-color: #1a1a1a;
+    width: 18%;
+    margin-bottom: 1%;
+    margin-right: 1%;
+}
+
+.movie-card .card-img-top{
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-title{
+    height: 3rem;
+}
+
+.card-title a{
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.fas.fa-star{
+    color: #f5c518;
+}
+
+.rating{
+    color: #ccc;
+}
+
+.rate-btn{
+    margin-bottom: 15px;
+    color: #5799ef;
+    background-color: #333;
+    border-color: #333;
+    width: 100%;
+    font-weight: bold;
+}
+
+.rate-btn:hover{
+    background-color: #444;
+    border-color: #444;
+}
+
+.empty-list{
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.card{
+    background-color: #111111;
+}
+
 /* login */
 
 #auth-row {
@@ -162,6 +237,35 @@
 .edit-profile .card-btn {
     margin: 5px;
     width: auto;
+}
+/* New Movie */
+
+.new-movie-container{
+    text-align: center;
+    min-width: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+#add-movie-form{
+    text-align: left;
+}
+
+.new-movie-container-container{
+    height: 400px;
+}
+
+.page-title:after{
+    content: "";
+    width: 300px;
+    border-bottom: 2px solid #f5c518;
+    display: block;
+    margin: 0 auto;
+    padding-top: 7px;
+}
+
+.div-newmovie{
+    margin: 15px;
 }
 /* footer */
 
