@@ -234,7 +234,8 @@
     margin-top: 30px;
 }
 
-.edit-profile .card-btn {
+.edit-profile .card-btn,
+#add-movie-container .card-btn {
     margin: 5px;
     width: auto;
 }
@@ -267,6 +268,85 @@
 .div-newmovie{
     margin: 15px;
 }
+
+/* Dashboard */
+.table-dark{
+    background-color: #000;
+    
+}
+.table {
+  color: white;
+}
+
+.table a{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#add-movie-container{
+    text-align: right;
+}
+
+#movies-dashboard .table th{
+    border-top: none;
+}
+
+#movies-dashboard .table tr{
+    padding: 15px 0;
+}
+
+#table-movie-title{
+    color: #fff;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.table-movie-title:hover{
+    color: #f5c518;
+}
+
+.actions-column{
+    max-width: 75px;
+    text-align: center;
+}
+
+.actions-column form{
+    display: inline-block;
+}
+
+.edit-btn,
+.delete-btn{
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+    transition: .5s;
+    border: none;
+}
+
+.edit-btn{
+    background-color: #0dcaf0;
+    color: #fff;
+}
+
+.edit-btn:hover{
+    background-color: transparent;
+    color: #0dcaf0;
+    text-decoration: none;
+}
+
+.delete-btn{
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-btn:hover{
+    background-color: transparent;
+    color: #dc3545;
+    text-decoration: none;
+}
+
 /* footer */
 
 footer {
