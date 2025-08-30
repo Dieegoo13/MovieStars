@@ -134,9 +134,9 @@ use Soap\Url;
             $stmt->bindParam(":image", $movie->image);
             $stmt->bindParam(":trailer", $movie->trailer);
             $stmt->bindParam(":category", $movie->category);
-            $stmt->bindParam(":title", $movie->title);
             $stmt->bindParam(":length", $movie->length);
             $stmt->bindParam(":user_id", $movie->user_id);
+
 
             $stmt->execute();
 

@@ -235,7 +235,8 @@
 }
 
 .edit-profile .card-btn,
-#add-movie-container .card-btn {
+#add-movie-container .card-btn, 
+#review-form, .card-btn {
     margin: 5px;
     width: auto;
 }
@@ -346,6 +347,18 @@
     color: #dc3545;
     text-decoration: none;
 }
+
+
+
+.movie-image-container {
+  margin: 7rem;  
+  width: 80%;
+  height: 400px;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
 
 /* footer */
 
