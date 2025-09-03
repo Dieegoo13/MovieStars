@@ -208,7 +208,8 @@
 
 /* edit Profile */
 
-#profile-image-container {
+#profile-image-container,
+.profile-image-container {
     width: 150px;
     height: 150px;
     border: 6px solid #f5c518;
@@ -216,6 +217,11 @@
     background-size: cover;
     background-position: center;
     margin: 15px auto;
+}
+
+.profile-image-container{
+    width: 70px;
+    height: 70px;
 }
 
 .page-description {
@@ -236,7 +242,7 @@
 
 .edit-profile .card-btn,
 #add-movie-container .card-btn, 
-#review-form, .card-btn {
+#review-form, .card-btn, #edit-movie-form .card-btn {
     margin: 5px;
     width: auto;
 }
@@ -348,7 +354,7 @@
     text-decoration: none;
 }
 
-
+/* Movie */
 
 .movie-image-container {
   margin: 7rem;  
@@ -359,6 +365,59 @@
   background-repeat: no-repeat !important;
 }
 
+.movie-container {
+    text-align: center;
+}
+
+.movie-details {
+    margin: 25px 0;
+}
+
+.pipe {
+    border: 1px solid #333;
+}
+
+#reviews-title {
+    margin-bottom: 25px;
+}
+
+#review-form-container{
+    background-color: #333;
+    padding: 20px;
+}
+
+#review-form-container select,
+#review-form-container textarea{
+    width: 50%;
+}
+
+#reviews-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 4px solid #f5c518;
+}
+
+.review{
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+}
+
+.author-details-container{
+    padding-top: 20px;
+}
+
+.author-name a{
+    text-decoration: none;
+    color: #f5c518
+}
+
+.author-name a:hover {
+    text-decoration: underline;
+}
+
+.coment-title{
+    color: #999;
+}
 
 /* footer */
 
