@@ -4,12 +4,14 @@ require_once("templates/header.php");
 //Verifica se user está autenticado
 require_once("models/Movie.php");
 require_once("dao/MovieDAO.php");
+require_once("dao/ReviewDAO.php");
 
 $id = filter_input(INPUT_GET, "id");
 
 $movie;
 
 $movieDao = new MovieDAO($conn, $BASE_URL);
+$reviewDao = new ReviewDAO($conn, $BASE_URL);
 
 if (empty($id)) {
     $message->setMessage("O filme não foi encontrado!", "error", "index.php");
@@ -37,9 +39,12 @@ if (!empty($userData)) {
     if ($userData->id === $movie->user_id) {
         $userOwnsMovie = true;
     }
+
+    $alreadyReviewed = $reviewDao->hasAlereadyReviewed($id, $userData->id);
 }
 
-$alreadyReviewed = false;
+
+$movieReviews = $reviewDao ->getMoviesReview($id);
 ?>
 
 <div id="main-container" class="container-fluid">
@@ -106,30 +111,13 @@ $alreadyReviewed = false;
                     </form>
                 </div>
             <?php endif; ?>
-            <div class="col-md-12 review">
-                <div class="row">
-                    <!-- Coluna imagem do usuário -->
-                    <div class="col-md-1">
-                        <div class="profile-image-container review-image" style="background-image: url('<?= $BASE_URL ?>img/users/user.png')">
-                        </div>
-                    </div>
-
-                    <!-- Coluna detalhes do autor -->
-                    <div class="col-md-9 author-details-container">
-                        <h4 class="author-name">
-                            <a href="#">Matheus Teste</a>
-                        </h4>
-                        <p><i class="fas fa-star"></i> 9</p>
-                    </div>
-
-                    <!-- Coluna comentário -->
-                    <div class="col-md-12">
-                        <p class="comment-title">Comentário:</p>
-                        <p>Este é comentário do usuário</p>
-                    </div>
-                </div>
-            </div>
-
+            
+            <?php foreach ($movieReviews as $review):?>
+                <?php include("templates/user_review.php")?>
+            <?php endforeach;?>
+            <?php if (count($movieReviews) == 0):?>
+                <p class="empty-list">Não há comentários para esse filme</p>
+            <?php endif;?>    
         </div>
 
     </div>
