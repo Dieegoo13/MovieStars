@@ -6,6 +6,7 @@ use Soap\Url;
     require_once("models/Message.php");
 
     //Review DAO
+    require_once("dao/ReviewDAO.php");
 
     class MovieDAO implements MovieDAOInterface{
         private $conn;
@@ -30,6 +31,14 @@ use Soap\Url;
             $movie -> image = $data["image"];
             $movie -> length = $data["length"];
             $movie -> user_id = $data["user_id"];
+
+            //recebe as rating do filme
+
+            $reviewDao = new ReviewDAO($this->conn, $this->url);
+
+            $rating = $reviewDao->getRatings($movie->id);
+
+            $movie->rating = $rating;
             
             return $movie;
         }
@@ -119,7 +128,26 @@ use Soap\Url;
         }
 
         public function findByTitle($title){
+            $movies = [];
 
+            $stmt = $this->conn->prepare("SELECT * FROM movies
+                                            WHERE title LIKE :title");
+
+            $stmt->bindValue(":title", '%'.$title.'%');
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0) {
+
+                $moviesArray = $stmt->fetchAll();
+
+                foreach($moviesArray as $movie) {
+                $movies[] = $this->buildMovie($movie);
+                }
+
+            }
+
+            return $movies;
         }
 
         public function create(Movie $movie){

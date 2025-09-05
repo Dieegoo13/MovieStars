@@ -8,6 +8,7 @@
         public $category;
         public $length;
         public $user_id;
+        public $rating;
 
 
         public function imageGenerateName(){

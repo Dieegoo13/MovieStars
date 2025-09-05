@@ -56,7 +56,7 @@ $movieReviews = $reviewDao ->getMoviesReview($id);
                 <span class="pipe"></span>
                 <span><?= $movie->category ?></span>
                 <span class="pipe"></span>
-                <span><i class="fas fa-star"></i> 9 </span>
+                <span><i class="fas fa-star"></i> <?= $movie->rating?> </span>
             </p>
             <div class="ratio ratio-16x9">
                 <iframe src="<?= $movie->trailer ?>" frameborder="0"

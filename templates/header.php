@@ -16,7 +16,7 @@
 
     $userData = $userDao->verifyToken(false);
     
-;?>
+?>
 
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <form action="" method="get" id="search-form" class="d-flex align-items-center gap-2">
+            <form action="<?=$BASE_URL?>search.php" method="get" id="search-form" class="d-flex align-items-center gap-2">
                 <input type="text" name="q" id="search" class="form-control" placeholder="Buscar filmes" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">
                     <i class="fas fa-search"></i>
